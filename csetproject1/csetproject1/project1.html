@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="project1.css">
+    <title>Grocery List of DOOM</title>
+</head>
+<body>
+    <h1>Grocery List of DOOM</h1>
+    
+ <script>
+
+      let numberOfItems = 0
+
+      let Manager = {}
+
+      // The select element that holds the options
+      let SelectElement = document.createElement("select")
+      SelectElement.className = "SelectThing"
+      SelectElement.name = "Options"
+      document.body.append(SelectElement)
+
+      // The option to chosoe purchased items
+      let OnlyPurchasedItemsOptions = document.createElement("option")
+      OnlyPurchasedItemsOptions.value = "Purchased"
+      OnlyPurchasedItemsOptions.innerText = "Purchased"
+      SelectElement.append(OnlyPurchasedItemsOptions)
+
+      // The option to choose not purchased items
+      let NotPurchasedItemOption = document.createElement("option")
+      NotPurchasedItemOption.value = "NotPurchased"
+      NotPurchasedItemOption.innerText = "Not Purchased"
+      SelectElement.append(NotPurchasedItemOption)
+
+      SelectElement.value = ""
+
+      // What the user types in
+      let InputHolder = document.createElement("div")
+      InputHolder.className = "InputHolder"
+      document.body.append(InputHolder)
+
+      // Div for listing the items
+      let buttonsHolder = document.createElement("div")
+      buttonsHolder.className = "buttonsHolder"
+      document.body.append(buttonsHolder)
+
+      // Items Left To Purchase Div
+      let notBought = document.createElement("div")
+      notBought.className = "notBought"
+      notBought.style.fontSize = "25px"
+      document.body.append(notBought)
+
+
+      // Purchased Items Div
+      let Bought = document.createElement("div")
+      Bought.className = "Bought"
+      Bought.style.backgroundColor = "brown"
+      Bought.style.borderRadius = "50px"
+      Bought.style.fontSize = "25px"
+      document.body.append(Bought)
+
+      let InputLabel = document.createElement("label")
+      InputLabel.innerText = "What item would you like to add ?"
+      InputLabel.style.fontSize = "25px"
+      InputLabel.style.fontStyle = "oblique"
+      InputLabel.style.color = "white"
+      let InputElement = document.createElement("input")
+      InputHolder.append(InputLabel)
+      InputHolder.append(InputElement)
+
+      let submitButton = document.createElement("button")
+      submitButton.style.backgroundColor = "cadetblue"
+      submitButton.style.borderImage
+      submitButton.innerText = "Add Item"
+      InputHolder.append(submitButton)
+
+      SelectElement.onchange = function() {
+         if (SelectElement.value == "NotPurchased") {
+            Bought.style.display = "none"
+            notBought.style.display = "block"
+         } else if (SelectElement.value == "Purchased") { 
+            notBought.style.display = "none"
+            Bought.style.display = "block"
+         }
+      }
+      
+      
+      submitButton.onclick = function() {
+         
+         if (Manager[InputElement.value.toLowerCase()]) return
+
+         numberOfItems += 1
+
+         if (InputElement.value == "") return
+         let Item = document.createElement("button")
+         Item.style.backgroundColor = "grey"
+         Item.style.fontSize = "20px"
+         Item.innerText = InputElement.value.toLowerCase()
+         InputElement.value = ""
+         buttonsHolder.append(Item)
+         Manager[Item.innerText] = {Purchased : false}
+
+         // Storing the old name so I can set it back
+         let oldName = Item.innerText
+
+         // Label for putting in purchased or unpurchased div
+         let newLabel = document.createElement("label")
+         newLabel.innerText = `${numberOfItems}. ${Item.innerText}`
+         notBought.append(newLabel)
+         
+         Item.onclick = function() {
+
+            // if the item has been purchased
+            if (Manager[Item.innerText].Purchased) {
+               Manager[Item.innerText].Purchased = false
+               Item.innerText = oldName
+               notBought.append(newLabel)
+            } else {
+               Manager[Item.innerText].Purchased = true
+               Item.innerHTML = `<del>${Item.innerText}</del>`
+               Bought.append(newLabel)
+            }   
+
+         }
+      }
+
+   </script>
+
+   <div class="halloweenMusic">
+      <embed src="Best 1 HOUR 🎃 Halloween Mix 2022 🎃 - Playlist For Halloween Parties and Trick - or - Treating 👻🍬.mp3" loop="true" autostart="true" width="2" height="0">
+   </div>
+</body>
+</html>
+

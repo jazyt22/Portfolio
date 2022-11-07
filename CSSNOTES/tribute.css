@@ -1,0 +1,57 @@
+*{
+    background-image: url(https://preview.redd.it/2n2dio27tkx41.png?width=1920&format=png&auto=webp&s=0d694db2fa2ab3000e8b261f2fbcb2bb59b00002);   
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+}
+
+.p2{
+    padding-left: 50px;
+}
+
+.p4{
+    padding-left: 15px;
+}
+
+
+.h1{
+    font-size: 50px;
+    padding: 400px;
+    margin-left: 125px;
+    margin-bottom: 500px;
+}
+
+.h2{
+    font-size: 35px;
+}
+
+.h4{
+    font-size: 25px;
+    text-align-last: justify;
+    margin-left: 150px;
+    margin-right: 200px;
+}
+
+.p1{
+    font-weight:400;
+    font-size: 20px;
+
+}
+
+.p2{
+    
+    font-weight: 500;
+    font-size: 25px;
+}
+
+
+.p4{
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.p5{
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 100px;
+}

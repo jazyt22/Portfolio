@@ -1,0 +1,79 @@
+* body {
+border-style: ridge;
+font-weight: bolder;
+text-align: center;
+font-size: 25px;
+padding: 15px;
+margin: 350px;
+border-width: 25px;
+border-color:cadetblue ;
+background-image: url(https://img.freepik.com/premium-vector/cute-halloween-seamless-background_6997-2273.jpg?w=2000);
+}
+/* The final score the players sees
+after they completed the game
+*/
+.ScoreLabel {
+
+background-color:cornsilk;
+border-radius: 25px;
+padding: 20px;
+font-size: 25px;
+}
+
+/* The reload button that shows up
+after the questions is finished so that u can
+run it again
+*/
+.ReloadButton {
+    margin-top: 200px;
+    padding: 15px;
+    background-color:crimson;
+    font-size: 30px;
+
+}
+
+/* The div that contains 
+ - each unique question
+ - the answer
+ - the submit button
+
+If you change this itll change it for all of
+the questions so theyll all look the same!
+*/
+.QandADiv {
+
+}
+
+h1 {
+    border-style: double;
+    margin-bottom: 100px;
+    background-color:burlywood;
+}
+
+/* Basically all the text beside the
+radio buttons i.e the potential answers
+*/
+.Options {
+    background-color:rgb(237, 140, 4);
+    border-style: solid;
+    padding: 5px;
+
+}
+
+
+/* The buttons that have the circle which you can select
+Im not sure if youll be able to do much styling with it...
+*/
+.RadioButtons {
+    margin: 25px;
+    font-size: 50px;
+
+}
+
+/* The submit button at the bottom that is on every single question
+*/
+.SubmitButtons {
+    background-color:mediumseagreen;
+    font-size: 40px;
+
+}

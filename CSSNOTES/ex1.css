@@ -1,0 +1,29 @@
+* {
+    margin: 100px;
+}
+
+.p1{
+    padding: 10px;
+    font-size: 25px;
+    border-style: solid;
+}
+
+.p2{
+    font-size: 25px;
+    border-color: red;
+    border-bottom-style: solid;
+}
+
+.p3{
+    padding: 10px;
+    font-size: 25px;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+.p4{
+    font-size: 25px;
+    background-color:lightblue;
+    border-left-style: solid;
+    border-color: blue;
+}

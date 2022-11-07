@@ -1,0 +1,80 @@
+/* *.outer{
+    width: 100px;
+    text-align: center;
+}
+
+
+.inner{
+display: inline-flexbox;
+}
+
+.bone {
+    padding: 25px;
+    margin-top: 500px ;
+    background-color: black;
+    font: optional; color: azure;
+    font-family:'Gill Sans';
+    font-size: 25px;
+}
+
+ .btwo {
+    margin: 200px;
+    padding: 25px;
+    background-color: black;
+    font: optional; color: azure;
+    font-family:'Gill Sans';
+    font-size: 25px;
+}
+
+.bthree {
+    padding: 25px;
+    background-color: black;
+    font: optional; color: azure;
+    font-family:'Gill Sans';
+    font-size: 25px;
+}
+ */
+
+
+
+ * body {
+    background-image: url(https://wallpapercave.com/wp/Hx8v35J.jpg);
+    background-repeat: no-repeat;
+    background-size: 1400px 1100px;
+    background-attachment: scroll;
+    text-align: center;
+    display:list;
+    padding: 200px;
+    margin: 100px;
+
+  }
+
+  h1{
+    font-family:serif;
+    color:white;
+    font-style: oblique;
+    font-size: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .inputHolder {
+    size: 50px;
+    margin-bottom: 50px;
+    border-style: double;
+  }
+  
+
+  .buttonsHolder {
+  font-size: x-large;
+  padding: 0%;
+  margin: 50px;
+}
+
+  .notBought {
+    margin: 100px;
+    border: 10px;
+    background-color:darkslategray;
+    border-style:none;
+    border-radius: 50px;  
+  }
+  

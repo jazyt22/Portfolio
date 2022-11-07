@@ -1,0 +1,43 @@
+
+
+ * body {
+    background-image: url(https://wallpapercave.com/wp/Hx8v35J.jpg);
+    background-repeat: no-repeat;
+    background-size: 1800px 1400px;
+    background-attachment: scroll;
+    text-align: center;
+    display:list;
+    padding: 200px;
+    margin: 100px;
+
+  }
+
+  h1{
+    font-family:serif;
+    color:white;
+    font-style: oblique;
+    font-size: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .inputHolder {
+    size: 50px;
+    margin-bottom: 50px;
+    border-style: double;
+  }
+  
+
+  .buttonsHolder {
+  font-size: x-large;
+  padding: 0%;
+  margin: 50px;
+}
+
+  .notBought {
+    margin: 100px;
+    border: 10px;
+    background-color:darkslategray;
+    border-style:none;
+    border-radius: 50px;  
+  }
+  

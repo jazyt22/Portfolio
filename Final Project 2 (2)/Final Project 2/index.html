@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Final Project 2 - Quiz</title>
+   <link rel="stylesheet" href="index.css">
+
+
+ 
+
+</head>
+<body>
+
+   <h1>Spooky Questionaire</h1>
+
+   <script>
+
+      // The players score!
+      let score = 0
+
+      // All the questions and the answers stuff!
+      let QandA = [
+         {Question : "What planet are you on?", Options : [
+            "Earth",
+            "Jupiter",
+            "Neptune",
+            "Uranus"
+         ], CorrectAnswer : "Earth", Name : "planets"},
+         {Question : "Who was the first president?", Options : [
+            "George Washington",
+            "James Madison",
+            "Ben Franklin",
+            "Connor Kenway"
+         ], CorrectAnswer : "George Washington", Name : "pres"},
+         {Question : "What animal was alive during 10,000 bce", Options : [
+            "Sabertooth Tiger",
+            "Elephant",
+            "Lion",
+            "T-Rex"
+         ], CorrectAnswer : "Sabertooth Tiger", Name : "animals"},
+         {Question : "What actor plays Dexter in the famous Showtime series?", Options : [
+            "Michael C. Hall",
+            "Brad Pitt",
+            "Timothee Chamalet",
+            "Rihanna"
+         ], CorrectAnswer : "Michael C. Hall", Name : "dex"},
+         {Question : "Boiling point of water?", Options : [
+            "100C",
+            "50C",
+            "40C",
+            "10C"
+         ], CorrectAnswer : "100C", Name : "water"},
+         {Question : "What is the fastest USB type?", Options : [
+            "2.0",
+            "3.0",
+            "1.0",
+            "0"
+         ], CorrectAnswer : "3.0", Name : "usb"},
+         {Question : "What planet is technically not part of our solar system?", Options : [
+            "Pluto",
+            "Earth",
+            "Jupiter",
+            "Sun"
+         ], CorrectAnswer : "Pluto", Name : "planets2"},
+         {Question : "Which CPU speed below is the fastest?", Options : [
+            "2.5Ghz",
+            "3.6Ghz",
+            "2.0Ghz",
+            "1.0Ghz"
+         ], CorrectAnswer : "3.6Ghz", Name : "cpu"},
+         {Question : "What is the elixir of life?", Options : [
+            "Water",
+            "Soda",
+            "Salt Water",
+            "Bleach"
+         ], CorrectAnswer : "Water", Name : "elixir"},
+         {Question : "How much protein does 1 egg have", Options : [
+            "7g",
+            "4g",
+            "8g",
+            "1g"
+         ], CorrectAnswer : "7g", Name : "egg"}
+      ]
+
+      // The current question we are on!
+      let currentQuestion = 0
+
+      function NextQuestion() {
+
+         // Just so like it it doesnt run if the current question is greater so I just stop the code
+         if (currentQuestion >= QandA.length) {
+
+            // Creating the score label element that displays the score
+            let Score_Element = document.createElement("label")
+            Score_Element.innerText = `You scored ${score} points, congrats!!`
+            Score_Element.className = "ScoreLabel"
+            document.body.append(Score_Element)
+
+            // Creating a break so theres a bit of room between the score and the replay button
+            let Break_Element = document.createElement("br")
+            document.body.append(Break_Element)
+
+            // Creating the reload element that allows us to reload the page so we can run everything  over again
+            let Reload_Element = document.createElement("button")
+            Reload_Element.innerText = "Replay!"
+            Reload_Element.className = "ReloadButton"
+            document.body.append(Reload_Element)
+
+            // When it is clicked it reloads the page
+            Reload_Element.onclick = function() {
+               window.location.reload()
+            }
+
+            return
+         }
+
+         // The div that holds all the question stuff (button, answers,question)
+         let Div_Element = document.createElement("div")
+         Div_Element.className = "QandA_Div"
+         document.body.append(Div_Element)
+
+         let Question_Element = document.createElement("p")
+         Question_Element.innerText = QandA[currentQuestion].Question
+         Div_Element.append(Question_Element)
+
+         // Setting the options to a variable
+         let Options = QandA[currentQuestion].Options
+
+         // Looping through the potential options
+         for (let ans = 0; ans < Options.length; ans++) {
+
+            // Creating the radio button element i.e the c
+            let Radio_Element = document.createElement("input")
+            Radio_Element.type = "radio"
+            Radio_Element.className = "RadioButtons"
+            Radio_Element.name = QandA[currentQuestion].Name
+            Radio_Element.value = Options[ans]
+            Div_Element.append(Radio_Element)
+
+            // The different option names
+            let Label = document.createElement("label")
+            Label.className = "Options"
+            Label.innerText = Options[ans]
+            Div_Element.append(Label)
+
+            // Creating a break so that it seperates things
+            let Break_Element = document.createElement("br")
+            Div_Element.append(Break_Element)
+         }
+
+         // Creating a break so that it seperates things
+         let Break_Element = document.createElement("br")
+         Div_Element.append(Break_Element)
+
+         // The submit button
+         let Submit_Element = document.createElement("button")
+         Submit_Element.innerText = "Submit"
+         Submit_Element.className = "SubmitButtons"
+         Div_Element.append(Submit_Element)
+
+         // When the submit button is clicked
+         Submit_Element.onclick = function() {
+            // Grabbing all the radio button options
+            let radio_buttons = document.getElementsByName(QandA[currentQuestion].Name)
+            // Looping through them
+            for (let i = 0; i < radio_buttons.length; i++) {
+               // Checking the radio button that is checked
+               if (radio_buttons[i].checked) {
+
+                  // They got the question correct so lets give them some points!!
+                  if (radio_buttons[i].value == QandA[currentQuestion].CorrectAnswer) {
+                     score += 10
+                     console.log("Correct answer")
+                  }
+                  
+                  // Increment the question so we go to the next one
+                  currentQuestion += 1
+
+                  // Deleting the previous question element stuff
+                  Div_Element.remove()
+
+                  // Call the function again and run everything
+                  NextQuestion()
+
+               }
+            }
+
+         }
+      }
+        
+      // Calling the function so it runs
+      NextQuestion()
+
+   </script>
+   
+</body>
+</html>

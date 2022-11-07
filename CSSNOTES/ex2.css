@@ -1,0 +1,28 @@
+*{
+
+}
+
+
+
+.b1{
+    margin-left: 15px;
+    font-size: 20px;
+    background-color: blue;
+    
+}
+
+.google{
+    padding-top: 50px;
+    padding-left: 525px;
+}
+
+.search{
+
+    border-style: solid;
+    border-width: 2px ;
+    padding: 15px;
+    border-radius: 50px;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
